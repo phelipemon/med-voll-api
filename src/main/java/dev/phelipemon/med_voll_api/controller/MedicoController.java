@@ -2,6 +2,7 @@ package dev.phelipemon.med_voll_api.controller;
 
 import dev.phelipemon.med_voll_api.domain.medico.*;
 import dev.phelipemon.med_voll_api.repository.MedicoRepository;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -15,6 +16,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("/medicos")
+@SecurityRequirement(name = "bearer-key")
 public class MedicoController {
     @Autowired
     private MedicoRepository repository;
